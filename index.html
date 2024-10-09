@@ -1,97 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        section {
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to the Gaming Hub</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#games">Games</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Featured Game</h2>
-            <div class="game-container">
-                <!-- Placeholder for game content -->
-                <p>Game content will be displayed here.</p>
-            </div>
-        </section>
-        <section id="games">
-            <h2>Our Games</h2>
-            <p>Explore our collection of exciting games.</p>
-        </section>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>Learn more about our mission and team.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Get in touch with us for more information.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Gaming Hub. All rights reserved.</p>
-    </footer>
-    <script>
-        // Placeholder for JavaScript functionality
-        console.log("Welcome to the Gaming Hub!");
-    </script>
-</body>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Gaming Website</title>  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">  
+  <style>  
+   body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 0;  
+   }  
+  
+   header {  
+    background-color: #333;  
+    color: #fff;  
+    padding: 1em;  
+    text-align: center;  
+   }  
+  
+   header nav {  
+    margin-top: 1em;  
+   }  
+  
+   .hero {  
+    background-image: url('hero.jpg');  
+    background-size: cover;  
+    background-position: center;  
+    height: 100vh;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    color: #fff;  
+   }  
+  
+   .featured-games {  
+    padding: 2em;  
+   }  
+  
+   .featured-games img {  
+    width: 100%;  
+    height: 200px;  
+    object-fit: cover;  
+    border-radius: 10px;  
+   }  
+  
+   .featured-games h3 {  
+    font-size: 18px;  
+    margin-top: 10px;  
+   }  
+  
+   .latest-news {  
+    padding: 2em;  
+   }  
+  
+   .latest-news ul {  
+    list-style: none;  
+    padding: 0;  
+    margin: 0;  
+   }  
+  
+   .latest-news li {  
+    margin-bottom: 20px;  
+   }  
+  
+   .latest-news h3 {  
+    font-size: 18px;  
+    margin-top: 10px;  
+   }  
+  
+   footer {  
+    background-color: #333;  
+    color: #fff;  
+    padding: 1em;  
+    text-align: center;  
+    clear: both;  
+   }  
+  </style>  
+</head>  
+<body>  
+  <header>  
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
+    <a class="navbar-brand" href="#">Gaming Website</a>  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  
+      <span class="navbar-toggler-icon"></span>  
+    </button>  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">  
+      <ul class="navbar-nav mr-auto">  
+       <li class="nav-item active">  
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>  
+       </li>  
+       <li class="nav-item">  
+        <a class="nav-link" href="#" onclick="showGames()">Games</a>  
+       </li>  
+       <li class="nav-item">  
+        <a class="nav-link" href="#">Community</a>  
+       </li>  
+      </ul>  
+    </div>  
+   </nav>  
+  </header>  
+  <main>  
+   <section class="hero">  
+    <h1>Welcome to Gaming Website</h1>  
+    <p>Explore our collection of games and join our community!</p>  
+    <button class="btn btn-primary">Get Started</button>  
+   </section>  
+   <section class="featured-games" id="games-section" style="display: none;">  
+    <h2>Games</h2>  
+    <div class="row">  
+      <div class="col-md-4">  
+       <img src="1v1lol.jpg" alt="1v1.lol">  
+       <h3><a href="https://1v1.lol/">1v1.lol</a></h3>  
+       <p>Play 1v1.lol, a popular online multiplayer game!</p>  
+      </div>  
+      <div class="col-md-4">  
+       <img src="cluster-rush.jpg" alt="Cluster Rush">  
+       <h3>Cluster Rush</h3>  
+       <p>Cluster Rush is a fast-paced multiplayer game where you must collect clusters to win!</p>  
+      </div>  
+      <div class="col-md-4">  
+       <img src="geometry-dash-scratch.jpg" alt="Geometry Dash (Scratch)">  
+       <h3>Geometry Dash (Scratch)</h3>  
+       <p>Play Geometry Dash, a popular rhythm-based platformer game, on Scratch!</p>  
+      </div>  
+      <div class="col-md-4">  
+       <img src="eagle-craft.jpg" alt="Eagle Craft">  
+       <h3>Eagle Craft</h3>  
+       <p>Eagle Craft is a fun multiplayer game where you must collect resources and build structures!</p>  
+      </div>  
+      <div class="col-md-4">  
+       <img src="core-ball.jpg" alt="Core Ball">  
+       <h3>Core Ball</h3>  
+       <p>Core Ball is a challenging multiplayer game where you must collect balls to win!</p>  
+      </div>  
+      <div class="col-md-4">  
+       <img src="gun-spin.jpg" alt="Gun Spin">  
+       <h3>Gun Spin</h3>  
+       <p>Gun Spin is a fast-paced multiplayer game where you must spin your gun to win!</p>  
+      </div>  
+      <div class="col-md-4">  
+       <img src="a-dark-room.jpg" alt="A Dark Room">  
+       <h3>A Dark Room</h3>  
+       <p>A Dark Room is a mysterious text-based adventure game where you must make choices to progress!</p>  
+      </div>  
+      <div class="col-md-4">  
+       <img src="crossy-road.jpg" alt="Crossy Road">  
+       <h3>Crossy Road</h3>  
+       <p>Crossy Road is a popular endless runner game where you must cross roads to win!</p>  
+      </div>  
+    </div>  
+   </section>  
+   <section class="latest-news">  
+    <h2>Latest News and Updates</h2>  
+    <ul>  
+      <li>  
+       <h3>News 1</h3>  
+       <p>News 1 description</p>  
+      </li>  
+      <li>  
+       <h3>News 2</h3>  
+       <p>News 2 description</p>  
+      </li>  
+      <li>  
+       <h3>News 3</h3>  
+       <p>News 3 description</p>  
+      </li>  
+    </ul>  
+   </section>  
+  </main>  
+  <footer>  
+   <p>&copy; 2023 Gaming Website</p>  
+  </footer>  
+  <script>  
+   function showGames() {  
+    document.getElementById("games-section").style.display = "block";  
+   }  
+  </script>  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</body>  
 </html>
