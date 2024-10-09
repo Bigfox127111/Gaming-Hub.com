@@ -1,113 +1,83 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>Gaming Website</title>  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">  
-  <style>  
-   body {  
-    font-family: Arial, sans-serif;  
-    margin: 0;  
-    padding: 0;  
-   }  
-  
-   header {  
-    background-color: #333;  
-    color: #fff;  
-    padding: 1em;  
-    text-align: center;  
-   }  
-  
-   header nav {  
-    margin-top: 1em;  
-   }  
-  
-   .hero {  
-    background-image: url('hero.jpg');  
-    background-size: cover;  
-    background-position: center;  
-    height: 100vh;  
-    display: flex;  
-    justify-content: center;  
-    align-items: center;  
-    color: #fff;  
-   }  
-  
-   .featured-games {  
-    padding: 2em;  
-   }  
-  
-   .featured-games img {  
-    width: 100%;  
-    height: 200px;  
-    object-fit: cover;  
-    border-radius: 10px;  
-   }  
-  
-   .featured-games h3 {  
-    font-size: 18px;  
-    margin-top: 10px;  
-   }  
-  
-   .latest-news {  
-    padding: 2em;  
-   }  
-  
-   .latest-news ul {  
-    list-style: none;  
-    padding: 0;  
-    margin: 0;  
-   }  
-  
-   .latest-news li {  
-    margin-bottom: 20px;  
-   }  
-  
-   .latest-news h3 {  
-    font-size: 18px;  
-    margin-top: 10px;  
-   }  
-  
-   footer {  
-    background-color: #333;  
-    color: #fff;  
-    padding: 1em;  
-    text-align: center;  
-    clear: both;  
-   }  
-  </style>  
-</head>  
-<body>  
-  <header>  
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
-    <a class="navbar-brand" href="#">Gaming Website</a>  
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  
-      <span class="navbar-toggler-icon"></span>  
-    </button>  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">  
-      <ul class="navbar-nav mr-auto">  
-       <li class="nav-item active">  
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>  
-       </li>  
-       <li class="nav-item">  
-        <a class="nav-link" href="#" onclick="showGames()">Games</a>  
-       </li>  
-       <li class="nav-item">  
-        <a class="nav-link" href="#">Community</a>  
-       </li>  
-      </ul>  
-    </div>  
-   </nav>  
-  </header>  
-  <main>  
-   <section class="hero">  
-    <h1>Welcome to Gaming Website</h1>  
-    <p>Explore our collection of games and join our community!</p>  
-    <button class="btn btn-primary">Get Started</button>  
-   </section>  
-   <section class="featured-games" id="games-section" style="display: none;">  
-    <h2>Games</h2>  
-    <div class="row">  
-      <div class="col-md-4">  
-       <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITDxUSExAVFRUVFRcWFRUVFRUWFRYVFRcWGBUXFRUZHSggGBomHRUXITEhJykrLi4vFx8zODUtNygtLisBCgoKDg0OGhAQGy0lHyUtLS0vLS0tLS0tLS0tLy0tLS0tKy0tLS0tLS0tLS0tLy0tLS0tKy0tLS4tLS0tLS0uLf/AABEIARMAtwMBIgACEQEDEQH/xAAcAAABBAMBAAAAAAAAAAAAAAAAAQQFBgIDBwj/xABJEAACAQMCAwUEBgcFBQgDAAABAgMABBESIQUxQQYTIlFhB3GBkRQyQlKhsSNTYoKi0fAVM3KSwQhjssLhJFRzk7PS0/EXNIP/xAAaAQACAwEBAAAAAAAAAAAAAAAAAwECBAUG/8QAMhEAAgIBAwIEBAUDBQAAAAAAAAECEQMEEiExQQUTIlFhcaGxgZHB8PEzQtEGFCMyUv/aAAwDAQACEQMRAD8A5pSMoPMZpaVRXfKDZ7QdDim7wsOnyqVkhIGa1Up4ovoRRGhqUNT54VPMfHrTd7Q9D86W8cl05IaNYNZaq1MpHMYoDVVS9yKN2aWtQasgaumQbKM1jmlzU2BlRWNLmpskyopM1P8AZjsfeXxzDHiMfWmkOiJcc/F9ojyUHHXFDkkrYEEDShq6GvYbh8O09/NO45raoiIPTXJqz7xRJwfhg+rZTH1a7cH5KuKbDDknzGL+33oRLV4YunL9fsc9zS1dLjgdgeUVxF/hnRx8niyf81RV12Z2zBOJD+rkUQyfuksUc+moHyBq0sGWCuUX+/kWhqMcujIClFDqVJVlKsDgqwIIPkQdwaSl2OsyzRWNFTZJvkXBoiG9SnErPqKjYB4gKt2IXJOSWmqLNQMiYOKuVongAqB41Z6TkVlx5fVtYxx4siKKKK1FAIrS9sp5be6t1FQ4p9QGL2zD1938q15qSrF0B5jNKeH2IoYBqzDVte08j860PGw5j40tqUeqIozBpQa0hqy1UKRBefZv2RS7d7i5Omzt95Dy7xxv3YPljBbG+4A57XPjXHGmAijXurdBpjiTwjSOWoD8uQ/Gt/FbYWlja8OXYrGJZ8falbc5/e1H4LUKRXR0GBNedP8AD4L3+bON4jqXu8qL47/E1EYrWz0sz4qMuLmuruMeHG5dDdcTCmTyVqeWtDyUqWQ6WPFSo2XUCz4RiA31UkO2Puq56pnb9nORyINblRlYqwIZSVYHmGU4IPqCKmZJK09pDqkWXO7oA/nrj8OT71CHPnmubqIq9yN2JtelkWGorGkrKOLu0eRioiay0yZqdVfSsjEDzpUsm0vGJstR4RSX1qHQ1ujWnCiuXly7XaNsIWqOf3cJVsVoqz9ouH/aAqtxxEnFdbBnWTHuMuTG4yoworbPCVO9ac0+MrVoW+BaKKKkAopKKAMHgU9PlT/snwwycStEGCDcw5z91XVm9+wNM81Z/ZkueNWYP6xz8oZSPypWWEdrfwAvHaOfvL6d/Jyg9yeH/SouY4Gadytqkkb70jn5sTUHxq70jArsY/RBL2SPIc5tQ0vdjO+u8nAqOeWtTy1oeTbOcY61WWQ72LCoqkbnkrSz0zacnlsPPqfcOg/rasrO2EkqR53kdEzzI1sFzk++udl10U6jybYYGWXhHYviF1bm4hhUx/YDSBZJQDuY1Ixjb7RGemarHF0ZH0OrKy5DKwKsp8iDy5V3ntHx82XC5ZoQA0YjihGMqpZlRTjqFBzj0rlvtPn776BeMAJbmyRpcDALLjDY9dR+AHlWHFq8k24z7jZ41HlFLzRWGaWn2Ls6RFKDsRThbYH6ppkgrfExHKsGb4GvHz1N3dEcxW1BW6C66MMinS2qtuh+FcrNkfc3Y4kfc24dSKieHcBw5YjarJ3BB3
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .game img {
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#games">Games</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Welcome to the Gaming Website</h1>
+            <p>Explore the latest games and have fun!</p>
+        </section>
+        <section id="games" style="display:none;">
+            <h2>Games</h2>
+            <div class="game">
+                <h3>Core Ball</h3>
+                <a href="https://www.monkey-type.org/games/core-ball" target="_blank">
+                    <img src="core-ball.jpg" alt="Core Ball" style="width:200px;height:auto;">
+                </a>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.querySelector('a[href="#games"]').addEventListener('click', function() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('games').style.display = 'block';
+        });
+
+        document.querySelector('a[href="#home"]').addEventListener('click', function() {
+            document.getElementById('games').style.display = 'none';
+            document.getElementById('home').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
