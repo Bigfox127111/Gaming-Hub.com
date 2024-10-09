@@ -14,7 +14,6 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#games">Games</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -22,24 +21,29 @@
         <section id="home">
             <h2>Featured Game</h2>
             <div class="game-container">
-                <!-- Placeholder for game content -->
-                <p>Game content will be displayed here.</p>
+                <!-- Big Red Button -->
+                <p>A Fun game where you can not click the red button or else....</p>
             </div>
         </section>
         <section id="games">
             <h2>All Games</h2>
             <div class="games-list">
                 <!-- List of games -->
-                <p>List of games will be displayed here.</p>
+                <p>1v1.lol.</p>
+                <p>cluster Rush</p>
+                <p>geometry dash (scratch)</p>
+                <p>Eagle Craft</p>
+                <p>Core Ball</p>
+                <p>Gun Spin</p>
+                <p>A Dark Room</p>
+                <p>Crossy Road</p>
             </div>
         </section>
         <section id="about">
             <h2>About Us</h2>
             <p>Information about the gaming website.</p>
+            <p> This is a my first gaming website coded by Case pls follow me (:</p>
         </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Contact information and form.</p>
         </section>
     </main>
     <footer>
